@@ -1,0 +1,9 @@
+version: '3'
+services:
+  embulk:
+    container_name: embulk
+    build: docker/embulk
+    tty: true
+    working_dir: "/var/data"
+    volumes:
+      - .:/var/data

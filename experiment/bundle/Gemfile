@@ -5,6 +5,12 @@ source 'https://rubygems.org/'
 # Specify the exact prerelease version (like '= 0.9.0.beta') for prereleases.
 gem 'embulk'
 
+gem 'embulk-filter-column', '~> 0.7.1'
+gem 'embulk-filter-split_column', '~> 0.1.3'
+gem 'embulk-filter-timestamp_format'
+
+
+
 #
 # 1. Use following syntax to specify versions of plugins
 #    to install this bundle directory:

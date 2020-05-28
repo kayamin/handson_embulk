@@ -1,0 +1,24 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    embulk (0.9.23-java)
+      bundler (>= 1.10.6)
+      liquid (~> 4.0.0)
+      msgpack (~> 1.1.0)
+    embulk-filter-column (0.7.1)
+    embulk-filter-split_column (0.1.3)
+    embulk-filter-timestamp_format (0.3.3)
+    liquid (4.0.3)
+    msgpack (1.1.0-java)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  embulk
+  embulk-filter-column (~> 0.7.1)
+  embulk-filter-split_column (~> 0.1.3)
+  embulk-filter-timestamp_format
+
+BUNDLED WITH
+   1.16.0

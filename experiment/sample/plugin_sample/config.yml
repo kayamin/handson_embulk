@@ -1,0 +1,19 @@
+in:
+  type: file
+  path_prefix: /var/data/sample/./plugin_sample/csv/sample
+  parser:
+    charset: UTF-8
+    newline: LF
+    type: csv
+    delimiter: ','
+    quote: '"'
+    escape: '"'
+    trim_if_not_quoted: true
+    skip_header_lines: 1
+    allow_extra_columns: false
+    allow_optional_columns: false
+    columns:
+    - {name: period, type: string}
+    - {name: name, type: string}
+    - {name: age, type: long}
+out: {type: stdout}

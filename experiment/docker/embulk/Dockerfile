@@ -6,4 +6,4 @@ RUN curl --create-dirs -o ~/.embulk/bin/embulk -L "https://dl.embulk.org/embulk-
 
 RUN chmod +x ~/.embulk/bin/embulk
 
-ENV PTH ~/.embulk/bin:$PATH
+ENV PATH ~/.embulk/bin:$PATH

@@ -1,0 +1,5 @@
+in:
+  type: file
+  path_prefix: '/var/data/sample/./plugin_sample/csv/sample'
+out:
+  type: stdout

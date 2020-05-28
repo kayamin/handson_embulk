@@ -7,3 +7,11 @@ services:
     working_dir: "/var/data"
     volumes:
       - .:/var/data
+
+  digdag:
+    container_name: digdag
+    build: docker/digdag
+    tty: true
+    working_dir: "/var/data"
+    volumes:
+      - .:/var/data

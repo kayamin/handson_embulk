@@ -14,6 +14,33 @@ in:
     allow_optional_columns: false
     columns:
     - {name: period, type: string}
+    - {name: time, type: string}
     - {name: name, type: string}
     - {name: age, type: long}
+
+filters:
+  - type: split_column
+    delimiter: ' '
+    is_skip: true
+    target_key: period
+    output_columns:
+      - {name: period_start_date, type: string}
+      - {name: delimiter, type: string}
+      - {name: period_end_date, type: string}
+  - type: column
+    columns:
+      - {name: period_start_date}
+      - {name: period_end_date}
+      - {name: time}
+      - {name: name}
+      - {name: age}
+  - type: timestamp_format
+    default_from_timezone: Asia/Tokyo
+    default_from_timestamp_format: ['%Y%m%d']
+    default_to_timestamp_format: '%Y-%m-%d %H:%M:%S'
+    columns:
+      - {name: period_start_date, type: timestamp}
+      - {name: period_end_date, type: timestamp}
+      - {name: time, type: timestamp, from_format: ['%Y-%m-%d %H:%M:%S']}
+
 out: {type: stdout}

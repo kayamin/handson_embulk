@@ -1,17 +1,16 @@
 version: '3'
 services:
-  embulk:
-    container_name: embulk
-    build: docker/embulk
+  digdag_embulk:
+    container_name: digdag_embulk
+    build: docker/digdag_embulk
     tty: true
     working_dir: "/var/data"
     volumes:
       - .:/var/data
 
-  digdag:
-    container_name: digdag
-    build: docker/digdag
+  db:
+    container_name: db
+    build: docker/postgresql
     tty: true
-    working_dir: "/var/data"
-    volumes:
-      - .:/var/data
+    ports:
+      - 5433:5432

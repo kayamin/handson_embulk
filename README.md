@@ -46,5 +46,36 @@ cd digdag_sample/mydag
 digdag run mydag.dig
 ```
 
+## embulk の plugin を導入する
+
+```
+# プラグインの独立したバンドルを作成する ( 直下に bundle ディレクトリが生成される)
+embulk mkbundle bundle
+
+# gemファイル修正, gem 'embulk-output-command' を追記
+vi bundle/Gemfile
+
+# プラグイン追加
+cd bundle
+embulk bundle install --path=vendor/bundle
+
+# プラグインのインストール状況確認
+embulk bundle list
+
+# プラグインの更新
+embulk bundle update
+cd ../
+
+# config.yml作成
+embulk guess -b ./bundle embulk_sample/plugin_sample/seed.yml -o embulk_sample/plugin_sample/config.yml
+
+# プレビュー
+embulk preview -b ./bundle embulk_sample/plugin_sample/config.yml
+
+# 実行
+embulk run -b ./bundle embulk_sample/plugin_sample/config.yml
+
+```
+
 ## digdag から embulk を実行する
 

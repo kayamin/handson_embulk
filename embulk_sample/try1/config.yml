@@ -1,6 +1,6 @@
 in:
   type: file
-  path_prefix: /var/data/sample/./try1/csv/sample_
+  path_prefix: /var/data/embulk_sample/try1/csv/sample_
   decoders:
   - {type: gzip}
   parser:

@@ -1,0 +1,5 @@
+in:
+  type: file
+  path_prefix: '/var/data/embulk_sample/try1/csv/sample_'
+out:
+  type: stdout
